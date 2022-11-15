@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/team"
+        android:enabled="true"
+        android:icon="@drawable/volleyballteam"
+        android:title="Volleyball team rating"
+        app:cnb_backgroundColor="#EF5E8F"
+        app:cnb_iconColor="#000000"
+        app:cnb_iconTintMode="src_in"
+        app:cnb_textColor="@color/black" />
+    <item
+        android:id="@+id/tips"
+        android:enabled="true"
+        android:icon="@drawable/volleyballtips"
+        android:title="How to get into volleyball betting"
+        app:cnb_backgroundColor="#EF5E8F"
+        app:cnb_iconColor="#000000"
+        app:cnb_iconTintMode="src_in"
+        app:cnb_textColor="@color/black" />
+    <item
+        android:id="@+id/home2"
+        android:enabled="true"
+        android:icon="@drawable/volleyballteam"
+        android:title="Volleyball Team"
+        app:cnb_backgroundColor="#EF5E8F"
+        app:cnb_iconColor="#000000"
+        app:cnb_iconTintMode="src_in"
+        app:cnb_textColor="@color/black" />
+</menu>
