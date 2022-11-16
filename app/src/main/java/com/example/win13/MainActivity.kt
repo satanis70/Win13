@@ -7,6 +7,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.win13.databinding.ActivityMainBinding
 import com.example.win13.databinding.FragmentMainBinding
+import com.onesignal.OneSignal
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +17,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
+
+        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE)
+        OneSignal.initWithContext(this)
+        OneSignal.setAppId("714b9f14-381d-4fc4-a93c-28d480557381")
+
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.frame_layout_container) as NavHostFragment
         val navController = navHostFragment.navController
