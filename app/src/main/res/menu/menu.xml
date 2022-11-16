@@ -20,9 +20,9 @@
         app:cnb_iconTintMode="src_in"
         app:cnb_textColor="@color/black" />
     <item
-        android:id="@+id/home2"
+        android:id="@+id/vocabulary"
         android:enabled="true"
-        android:icon="@drawable/volleyballteam"
+        android:icon="@drawable/volleyballnet"
         android:title="Volleyball Team"
         app:cnb_backgroundColor="#EF5E8F"
         app:cnb_iconColor="#000000"

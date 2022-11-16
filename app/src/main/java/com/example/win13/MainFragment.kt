@@ -35,7 +35,7 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        CoroutineScope(Dispatchers.IO).launch{
+        CoroutineScope(Dispatchers.IO).launch {
             val api = RetrofitApi::class.java
             val retrofitApi = Retrofit.Builder()
                 .baseUrl("http://49.12.202.175/")
@@ -44,7 +44,7 @@ class MainFragment : Fragment() {
                 .create(api)
             val list = ArrayList<Rankingmenteam>()
             val response = retrofitApi.getTeams().awaitResponse()
-            if (response.isSuccessful){
+            if (response.isSuccessful) {
                 list.addAll(response.body()!!.rankingmenteams)
             }
             launch(Dispatchers.Main) {

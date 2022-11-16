@@ -10,13 +10,13 @@ import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.bumptech.glide.Glide
 import com.example.win13.model.Rankingmenteam
 
-class TeamAdapter(val list: List<Rankingmenteam>): RecyclerView.Adapter<TeamAdapter.Holder>() {
+class TeamAdapter(val list: List<Rankingmenteam>) : RecyclerView.Adapter<TeamAdapter.Holder>() {
 
-    inner class Holder(itemView: View):RecyclerView.ViewHolder(itemView){
+    inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView = itemView.findViewById<ImageView>(R.id.imageView_team)
         val textViewName = itemView.findViewById<TextView>(R.id.text_view_name_team)
         val textViewScore = itemView.findViewById<TextView>(R.id.text_view_score_team)
-        fun bind(imageUrl: String, name: String, score: String){
+        fun bind(imageUrl: String, name: String, score: String) {
             Glide.with(itemView.context)
                 .load(imageUrl)
                 .into(imageView)

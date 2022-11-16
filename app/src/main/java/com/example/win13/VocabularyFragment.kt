@@ -1,15 +1,13 @@
 package com.example.win13
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.win13.databinding.FragmentTipsBinding
-import com.example.win13.model.Volleyballbetting
+import com.example.win13.databinding.FragmentVocabularyBinding
+import com.example.win13.model.Vocabulary
 import com.example.win13.retrofit.RetrofitApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -17,18 +15,18 @@ import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.awaitResponse
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
-class TipsFragment : Fragment() {
 
-    private lateinit var tipsBinding: FragmentTipsBinding
+class VocabularyFragment : Fragment() {
+
+    private lateinit var vocabularyBinding: FragmentVocabularyBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        tipsBinding = FragmentTipsBinding.inflate(layoutInflater)
-        return tipsBinding.root
+    ): View? {
+        vocabularyBinding = FragmentVocabularyBinding.inflate(layoutInflater)
+        return vocabularyBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,16 +38,15 @@ class TipsFragment : Fragment() {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(api)
-            val list = ArrayList<Volleyballbetting>()
-            val response = retrofitApi.getTips().awaitResponse()
-            if (response.isSuccessful) {
-                list.addAll(response.body()!!.volleyballbetting)
+            val list = ArrayList<Vocabulary>()
+            val response = retrofitApi.getVocabulary().awaitResponse()
+            if(response.isSuccessful){
+                list.addAll(response.body()!!.vocabulary)
             }
             launch(Dispatchers.Main) {
-                Log.i("list", list.toString())
-                val recyclerView = tipsBinding.tipsRecycler
+                val recyclerView = vocabularyBinding.vocabularyRecycler
                 recyclerView.layoutManager = LinearLayoutManager(requireContext())
-                recyclerView.adapter = TipsAdapter(list)
+                recyclerView.adapter = VocabularyAdapter(list)
             }
         }
     }

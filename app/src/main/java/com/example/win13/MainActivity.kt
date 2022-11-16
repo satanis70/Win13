@@ -22,10 +22,16 @@ class MainActivity : AppCompatActivity() {
         val bar = mainBinding.bottomBar
         bar.setItemSelected(R.id.team)
         bar.setOnItemSelectedListener {
-            if (it==R.id.team){
-                navController.navigate(R.id.mainFragment)
-            } else if (it==R.id.tips){
-                navController.navigate(R.id.tipsFragment)
+            when (it) {
+                R.id.team -> {
+                    navController.navigate(R.id.mainFragment)
+                }
+                R.id.tips -> {
+                    navController.navigate(R.id.tipsFragment)
+                }
+                R.id.vocabulary -> {
+                    navController.navigate(R.id.vocabularyFragment)
+                }
             }
         }
     }

@@ -12,7 +12,7 @@ class SplashActivity : AppCompatActivity() {
 
         val context = this
 
-        object : CountDownTimer(3000, 1000){
+        object : CountDownTimer(3000, 1000) {
             override fun onTick(p0: Long) {}
             override fun onFinish() {
                 startActivity(Intent(context, MainActivity::class.java))

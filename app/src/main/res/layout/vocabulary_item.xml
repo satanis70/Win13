@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradient"
+    android:layout_marginTop="40dp"
+    android:layout_marginStart="14dp"
+    android:layout_marginEnd="14dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/text_view_name_vocab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:text="Outside Hitter"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+    <TextView
+        android:id="@+id/text_view_description_vocab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/white"
+        android:padding="8dp"
+        android:text="The player that plays on the left side of the court in the front and back-row is called the “outside hitter” or “left-side hitter. This player’s main job is to attack and pass. Typically this player is best at terminating the ball and will receive 60% or more of the sets in a match. They should be trained in hitting in less-than-perfect situations as bad passes should be set to this player to attack. If this player will play back-row as well, they will also need to be a strong serve receive passer, server, and defender."
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_name_vocab"></TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
